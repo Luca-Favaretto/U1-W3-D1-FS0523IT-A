@@ -208,18 +208,31 @@ const movies = [
 /* ESERCIZIO 9 (forEach)
   Scrivi una funzione per trovare il film più vecchio nell'array fornito.
 */
-const oldest = function (movies) {
-  let oldst = 3000;
-  let oldstTitle = "";
-  for (let i = 0; i < movies.length; i++) {
-    if (parseInt(movies[i].Year) < oldst) {
-      oldst = parseInt(movies[i].Year);
-      oldstTitle = movies[i].Title;
-    }
+// const oldest = function (movies) {
+//   let oldst = 3000;
+//   let oldstTitle = "";
+//   for (let i = 0; i < movies.length; i++) {
+//     if (parseInt(movies[i].Year) < oldst) {
+//       oldst = parseInt(movies[i].Year);
+//       oldstTitle = movies[i].Title;
+//     }
+//   }
+//   return oldstTitle;
+// };
+
+let oldst = 3000;
+let oldstTitle = "";
+movies.forEach((movie) => {
+  const year = parseInt(movie.Year);
+  if (!isNaN(year) && year < oldst) {
+    oldst = year;
+    oldstTitle = movie.Title;
   }
+
   return oldstTitle;
-};
-console.log(oldest(movies));
+});
+
+console.log(oldstTitle);
 
 /* ESERCIZIO 10
   Scrivi una funzione per ottenere il numero di film contenuti nell'array fornito.
