@@ -270,4 +270,5 @@ console.log(finder);
 /* ESERCIZIO 15 (findIndex)
   Scrivi una funzione per ottenere dall'array fornito l'indice del primo film uscito nell'anno fornito come parametro.
 */
-const correntMovieYear = movies.Year.findIdex();
+const correntMovieYear = movies.findIndex((movie) => movie.Year === "2019");
+console.log(movies[correntMovieYear]);
