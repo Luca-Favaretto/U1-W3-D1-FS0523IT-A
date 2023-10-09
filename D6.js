@@ -27,26 +27,37 @@ console.log(arrayRandomEs);
   Scrivi una funzione per ricavare solamente i valori PARI da un array composto da soli valori numerici
 */
 
-const valPair = arrayRandomEs.filter((number) => number % 2 === 0);
-console.log(valPair);
+const valEven = (array) => {
+  const even = array.filter((number) => number % 2 === 0);
+  return even;
+};
+console.log(valEven(arrayRandomEs));
+
 /* ESERCIZIO 4 (forEach)
   Scrivi una funzione per sommare i numeri contenuti in un array
 */
 
-let sum = 0;
-arrayRandomEs.forEach((element) => (sum += element));
-console.log(sum);
+const sumArrNums = function (array) {
+  let sum = 0;
+  array.forEach((element) => (sum += element));
+  return sum;
+};
+
+console.log(sumArrNums(arrayRandomEs));
 
 /* ESERCIZIO 5 (reduce)
   Scrivi una funzione per sommare i numeri contenuti in un array
 */
 
-const sum2 = arrayRandomEs.reduce((acc, val) => {
-  console.log("ACC", acc);
-  console.log("VAL", val);
-  return acc + val;
-}, 0);
-console.log(sum2);
+const sum2 = function (array) {
+  let sum = 0;
+  arrayRandomEs.reduce((acc, val) => {
+    console.log("ACC", acc);
+    console.log("VAL", val);
+    return acc + val;
+  }, 0);
+};
+console.log(sum2(arrayRandomEs));
 
 /* ESERCIZIO 6 (map)
   Scrivi una funzione che, dato un array di soli numeri e un numero n come parametri, ritorni un secondo array con tutti
