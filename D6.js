@@ -228,9 +228,8 @@ movies.forEach((movie) => {
     oldst = year;
     oldstTitle = movie.Title;
   }
-
-  return oldstTitle;
 });
+console.log(oldst);
 
 console.log(oldstTitle);
 
